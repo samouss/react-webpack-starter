@@ -11,7 +11,7 @@ Run this command for launch a new project from the starter.
 git clone git@github.com:samouss/react-webpack-starter.git [PROJECT_NAME]
 
 // Then execute this one for remove .git information and start a new project
-rm -rf !$/.git
+rm -rf [PROJECT_NAME]/.git
 ```
 
 ## Installation
