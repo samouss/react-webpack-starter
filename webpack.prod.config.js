@@ -48,7 +48,17 @@ module.exports = {
       inject: true,
       template: 'src/index.html',
     }),
+
     new ExtractTextPlugin('[name].css'),
+
+    new webpack.optimize.OccurrenceOrderPlugin(),
+
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production'),
+      },
+    }),
+
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         screw_ie8: true,
@@ -60,11 +70,6 @@ module.exports = {
       output: {
         comments: false,
         screw_ie8: true,
-      },
-    }),
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('production'),
       },
     }),
   ],
