@@ -1,6 +1,7 @@
 import chai from 'chai';
 import sinon from 'sinon';
 import React from 'react';
+import './index.css';
 
 chai.should();
 
