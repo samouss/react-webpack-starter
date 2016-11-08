@@ -12,7 +12,7 @@ module.exports = {
   output: {
     path: './dist',
     publicPath: '/',
-    filename: '[name].js',
+    filename: '[name].[hash:8].js',
   },
   eslint: {
     configFile: './.eslintrc',
@@ -53,7 +53,7 @@ module.exports = {
       template: 'src/index.html',
     }),
 
-    new ExtractTextPlugin('[name].css'),
+    new ExtractTextPlugin('[name].[hash:8].css'),
 
     new webpack.optimize.OccurrenceOrderPlugin(),
 
