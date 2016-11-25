@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "description": "Webpack React Starter with Babel, ESLint, Mocha, Chai, Sinon, Enzyme",
   "scripts": {
-    "start": "webpack-dev-server --inline --hot --content-base dist --no-info --open",
-    "build": "rm -rf ./dist && NODE_ENV=production webpack --progress",
-    "test": "npm run mocha \"./src/**/*.spec.js\"",
+    "clean": "rm -rf dist",
+    "start": "npm run clean && node_modules/.bin/webpack-dev-server --inline --hot --no-info",
+    "build": "npm run clean && node_modules/.bin/webpack --env.production --progress",
+    "test": "npm run mocha \"src/**/*.spec.js\"",
     "mocha": "mocha --require babel-register --require test-setup.js",
     "mocha:watch": "npm run mocha -- --watch"
   },
@@ -33,7 +34,7 @@
     "eslint-plugin-import": "2.2.0",
     "eslint-plugin-jsx-a11y": "2.2.3",
     "eslint-plugin-react": "6.7.0",
-    "extract-text-webpack-plugin": "1.0.1",
+    "extract-text-webpack-plugin": "2.0.0-beta.4",
     "html-loader": "0.4.4",
     "html-webpack-plugin": "2.24.1",
     "jsdom": "9.8.3",
@@ -42,8 +43,8 @@
     "react-addons-test-utils": "15.3.2",
     "sinon": "1.17.6",
     "style-loader": "0.13.1",
-    "webpack": "1.13.3",
-    "webpack-dev-server": "1.16.2"
+    "webpack": "2.1.0-beta.27",
+    "webpack-dev-server": "2.1.0-beta.11"
   },
   "dependencies": {
     "react": "15.3.2",
