@@ -16,7 +16,7 @@ module.exports = (options = {}) => {
       publicPath: '/',
       filename: '[name].[hash:8].js',
     },
-    performance: {
+    performance: !isProduction ? false : {
       hints: 'warning',
     },
     module: {
