@@ -16,6 +16,9 @@ module.exports = (options = {}) => {
       publicPath: '/',
       filename: '[name].[hash:8].js',
     },
+    performance: {
+      hints: 'warning',
+    },
     module: {
       loaders: [
         {
