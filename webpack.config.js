@@ -39,8 +39,8 @@ module.exports = (options = {}) => {
         {
           test: /\.css$/,
           loader: ExtractTextPlugin.extract({
-            fallbackLoader: 'style-loader',
-            loader: `css-loader?sourceMap&minimize=${isProduction}`,
+            fallback: 'style-loader',
+            use: `css-loader?sourceMap&minimize=${isProduction}`,
           }),
         },
         {
