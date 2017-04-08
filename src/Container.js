@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-/**
- * @name Container
- */
-export default class Container extends Component {
+class Container extends Component {
 
   constructor(props) {
     super(props);
 
-    this.state = { message: '<Container />' };
+    this.state = {
+      message: '<Container />',
+    };
   }
 
   render() {
     return (
       <div className="container">
-        <h1>React starter</h1>
+        <h1>React starter, {this.props.title}</h1>
 
         Hello from {this.state.message} !!
       </div>
@@ -22,3 +22,9 @@ export default class Container extends Component {
   }
 
 }
+
+Container.propTypes = {
+  title: PropTypes.string.isRequired,
+};
+
+export default Container;
