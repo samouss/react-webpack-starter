@@ -2,14 +2,18 @@
 
 exports[`sample should pass with JSX 1`] = `
 <div
-  className="container"
+  style={
+    Object {
+      "margin": "50px auto",
+      "width": "980px",
+    }
+  }
 >
-  <h1>
-    React starter, 
-    My React App
-  </h1>
-  Hello from 
-  &lt;Container /&gt;
-   !!
+  <Header
+    title="My React App"
+  />
+  <Header
+    message="<Container />"
+  />
 </div>
 `;
