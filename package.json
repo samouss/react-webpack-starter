@@ -6,9 +6,7 @@
     "clean": "rm -rf dist",
     "start": "npm run clean && node_modules/.bin/webpack-dev-server --inline --hot --no-info",
     "build": "npm run clean && node_modules/.bin/webpack --env.production --progress",
-    "test": "npm run mocha \"src/**/*.spec.js\"",
-    "mocha": "mocha --require babel-register --require test-setup.js",
-    "mocha:watch": "npm run mocha -- --watch"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -27,9 +25,9 @@
     "babel-preset-es2017": "6.24.1",
     "babel-preset-react": "6.24.1",
     "babel-register": "6.24.1",
-    "chai": "3.5.0",
     "css-loader": "0.28.4",
     "enzyme": "2.8.2",
+    "enzyme-to-json": "1.5.1",
     "eslint": "3.19.0",
     "eslint-config-airbnb": "15.0.1",
     "eslint-loader": "1.7.1",
@@ -39,10 +37,8 @@
     "extract-text-webpack-plugin": "2.1.0",
     "html-loader": "0.4.5",
     "html-webpack-plugin": "2.28.0",
-    "jsdom": "9.12.0",
-    "mocha": "3.2.0",
-    "react-addons-test-utils": "15.5.1",
-    "sinon": "2.1.0",
+    "jest": "20.0.4",
+    "react-test-renderer": "15.5.4",
     "style-loader": "0.18.1",
     "webpack": "2.6.1",
     "webpack-dev-server": "2.4.5"
@@ -51,5 +47,10 @@
     "prop-types": "15.5.10",
     "react": "15.5.4",
     "react-dom": "15.5.4"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   }
 }
