@@ -7,13 +7,13 @@
     }
   },
   "plugins": [
+    "jest",
     "react",
     "jsx-a11y"
   ],
   "env": {
     "browser": true,
     "node": true,
-    "mocha": true,
     "jest/globals": true
   },
   "rules": {
