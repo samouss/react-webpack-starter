@@ -4,12 +4,14 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const clean = plugins => plugins.filter(x => !!x);
 
+const CSSLoaderLocalIdentifier = isProduction => (isProduction ? '[hash:base64]'
+  : '[folder]__[local]--[hash:base64:5]');
+
 const CSSLoaderConfiguration = isProduction => ({
   loader: 'css-loader',
   options: {
     modules: true,
-    localIdentName: isProduction ? '[hash:base64]'
-      : '[folder]__[local]--[hash:base64:5]',
+    localIdentName: CSSLoaderLocalIdentifier(isProduction),
     sourceMap: isProduction,
     minimize: isProduction,
   },
@@ -35,10 +37,19 @@ module.exports = (options = {}) => {
           test: /\.js$/,
           exclude: /node_modules/,
           loaders: [
-            { loader: 'babel-loader' },
+            {
+              loader: 'babel-loader',
+              options: {
+                plugins: [
+                  ['react-css-modules', {
+                    generateScopedName: CSSLoaderLocalIdentifier(isProduction),
+                  }],
+                ],
+              },
+            },
             {
               loader: 'eslint-loader',
-              query: {
+              options: {
                 configFile: '.eslintrc',
                 failOnError: isProduction,
                 failOnWarning: isProduction,
