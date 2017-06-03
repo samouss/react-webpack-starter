@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sample should pass with JSX 1`] = `
+<div
+  className="container"
+>
+  <h1>
+    React starter, 
+    My React App
+  </h1>
+  Hello from 
+  &lt;Container /&gt;
+   !!
+</div>
+`;
