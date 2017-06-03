@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './Layout.css';
+import './index.css';
 
 const Header = ({ title }) => (
-  <h1 className={styles.container}>
+  <h1 styleName="container">
     React Starter, {title}
   </h1>
 );

@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './index.css';
+import './index.css';
 
 const Header = ({ message }) => (
-  <p className={styles.container}>
+  <p styleName="container">
     Hello from {message} !!
   </p>
 );
