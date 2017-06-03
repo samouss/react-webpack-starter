@@ -2,8 +2,18 @@ const webpack = require('webpack');
 const HtmlPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-// Helpers
 const clean = plugins => plugins.filter(x => !!x);
+
+const CSSLoaderConfiguration = isProduction => ({
+  loader: 'css-loader',
+  options: {
+    modules: true,
+    localIdentName: isProduction ? '[hash:base64]'
+      : '[folder]__[local]--[hash:base64:5]',
+    sourceMap: isProduction,
+    minimize: isProduction,
+  },
+});
 
 module.exports = (options = {}) => {
   const isProduction = !!options.production;
@@ -38,10 +48,13 @@ module.exports = (options = {}) => {
         },
         {
           test: /\.css$/,
-          loader: ExtractTextPlugin.extract({
+          loader: isProduction ? ExtractTextPlugin.extract({
             fallback: 'style-loader',
-            use: `css-loader?sourceMap&minimize=${isProduction}`,
-          }),
+            use: CSSLoaderConfiguration(isProduction),
+          }) : [
+            { loader: 'style-loader' },
+            CSSLoaderConfiguration(isProduction),
+          ],
         },
         {
           test: /\.html$/,
@@ -55,8 +68,9 @@ module.exports = (options = {}) => {
         template: 'src/index.html',
       }),
 
-      new ExtractTextPlugin({
+      isProduction && new ExtractTextPlugin({
         filename: '[name].[hash:8].css',
+        allChunks: true,
       }),
 
       isProduction && new webpack.optimize.OccurrenceOrderPlugin(),
