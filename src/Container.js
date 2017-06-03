@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import Header from './components/Header';
+import Content from './components/Content';
 
 class Container extends Component {
 
@@ -13,18 +14,18 @@ class Container extends Component {
 
   render() {
     return (
-      <div className="container">
-        <h1>React starter, {this.props.title}</h1>
+      <div style={{ width: '980px', margin: '50px auto' }}>
+        <Header
+          title="My React App"
+        />
 
-        Hello from {this.state.message} !!
+        <Content
+          message={this.state.message}
+        />
       </div>
     );
   }
 
 }
-
-Container.propTypes = {
-  title: PropTypes.string.isRequired,
-};
 
 export default Container;

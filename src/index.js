@@ -4,8 +4,6 @@ import Container from './Container';
 import './index.css';
 
 ReactDOM.render(
-  <Container
-    title="My React App"
-  />,
+  <Container />,
   document.getElementById('root'),
 );
