@@ -2,8 +2,6 @@ const webpack = require('webpack');
 const HtmlPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const clean = plugins => plugins.filter(x => !!x);
-
 const clean = plugins =>
   plugins.filter(x => !!x);
 
@@ -29,7 +27,7 @@ module.exports = (options = {}) => {
     output: {
       path: `${__dirname}/dist`,
       publicPath: '/',
-      filename: '[name].[hash:8].js',
+      filename: '[name].[chunkhash:8].js',
     },
     performance: !isProduction ? false : {
       hints: 'warning',
@@ -77,17 +75,35 @@ module.exports = (options = {}) => {
       ],
     },
     plugins: clean([
+      new webpack.NamedModulesPlugin(),
+      new webpack.NamedChunksPlugin(),
+
+      new webpack.optimize.CommonsChunkPlugin({
+        name: 'vendor',
+        filename: '[name].[chunkhash:8].js',
+        minChunks: module => (
+          module.context &&
+          module.context.indexOf('node_modules') !== -1 &&
+          module.resource &&
+          module.resource.match(/\.js$/)
+        ),
+      }),
+
+      new webpack.optimize.CommonsChunkPlugin({
+        name: 'manifest',
+        filename: '[name].[chunkhash:8].js',
+        minChunks: Infinity,
+      }),
+
       new HtmlPlugin({
         inject: true,
         template: 'src/index.html',
       }),
 
       isProduction && new ExtractTextPlugin({
-        filename: '[name].[hash:8].css',
+        filename: '[name].[contenthash:8].css',
         allChunks: true,
       }),
-
-      isProduction && new webpack.optimize.OccurrenceOrderPlugin(),
 
       isProduction && new webpack.DefinePlugin({
         'process.env': {
