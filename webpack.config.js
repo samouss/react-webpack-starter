@@ -5,6 +5,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const clean = plugins =>
   plugins.filter(x => !!x);
 
+const JSFilenameIdentifier = '[name].[chunkhash:8].js';
+
 const CSSLoaderLocalIdentifier = isProduction =>
   (!isProduction ? '[folder]__[local]--[hash:base64:5]' : '[hash:base64]');
 
@@ -27,7 +29,7 @@ module.exports = (options = {}) => {
     output: {
       path: `${__dirname}/dist`,
       publicPath: '/',
-      filename: '[name].[chunkhash:8].js',
+      filename: JSFilenameIdentifier,
     },
     performance: !isProduction ? false : {
       hints: 'warning',
@@ -80,7 +82,7 @@ module.exports = (options = {}) => {
 
       new webpack.optimize.CommonsChunkPlugin({
         name: 'vendor',
-        filename: '[name].[chunkhash:8].js',
+        filename: JSFilenameIdentifier,
         minChunks: module => (
           module.context &&
           module.context.indexOf('node_modules') !== -1 &&
@@ -91,7 +93,7 @@ module.exports = (options = {}) => {
 
       new webpack.optimize.CommonsChunkPlugin({
         name: 'manifest',
-        filename: '[name].[chunkhash:8].js',
+        filename: JSFilenameIdentifier,
         minChunks: Infinity,
       }),
 
