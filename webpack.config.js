@@ -22,7 +22,7 @@ module.exports = (options = {}) => {
   const isProduction = !!options.production;
 
   return {
-    devtool: isProduction ? 'source-map' : 'eval',
+    devtool: !isProduction ? 'eval' : 'source-map',
     entry: `${__dirname}/src/index.js`,
     output: {
       path: `${__dirname}/dist`,
