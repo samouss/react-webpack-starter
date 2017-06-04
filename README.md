@@ -3,7 +3,7 @@
 
 [![dependencies Status](https://david-dm.org/samouss/react-webpack-starter/status.svg)](https://david-dm.org/samouss/react-webpack-starter) [![devDependencies Status](https://david-dm.org/samouss/react-webpack-starter/dev-status.svg)](https://david-dm.org/samouss/react-webpack-starter?type=dev)
 
-React starter build with Webpack 2, Babel, ESLint, Jest, Enzyme.
+React starter build with Webpack 2, Babel, CSS Modules, ESLint, Jest, Enzyme.
 
 ## Clone
 
