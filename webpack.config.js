@@ -4,8 +4,11 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const clean = plugins => plugins.filter(x => !!x);
 
-const CSSLoaderLocalIdentifier = isProduction => (isProduction ? '[hash:base64]'
-  : '[folder]__[local]--[hash:base64:5]');
+const clean = plugins =>
+  plugins.filter(x => !!x);
+
+const CSSLoaderLocalIdentifier = isProduction =>
+  (!isProduction ? '[folder]__[local]--[hash:base64:5]' : '[hash:base64]');
 
 const CSSLoaderConfiguration = isProduction => ({
   loader: 'css-loader',
@@ -59,13 +62,13 @@ module.exports = (options = {}) => {
         },
         {
           test: /\.css$/,
-          loader: isProduction ? ExtractTextPlugin.extract({
-            fallback: 'style-loader',
-            use: CSSLoaderConfiguration(isProduction),
-          }) : [
+          loader: !isProduction ? [
             { loader: 'style-loader' },
             CSSLoaderConfiguration(isProduction),
-          ],
+          ] : ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            use: CSSLoaderConfiguration(isProduction),
+          }),
         },
         {
           test: /\.html$/,
