@@ -1,6 +1,6 @@
 {
   "name": "react-webpack-start",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Webpack React Starter with Babel, ESLint, Mocha, Chai, Sinon, Enzyme",
   "scripts": {
     "clean": "rm -rf dist",
