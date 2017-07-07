@@ -80,6 +80,8 @@ module.exports = (options = {}) => {
       new webpack.NamedModulesPlugin(),
       new webpack.NamedChunksPlugin(),
 
+      new webpack.optimize.ModuleConcatenationPlugin(),
+
       new webpack.optimize.CommonsChunkPlugin({
         name: 'vendor',
         filename: JSFilenameIdentifier,
