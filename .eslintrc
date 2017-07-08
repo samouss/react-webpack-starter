@@ -3,18 +3,25 @@
   "parserOptions": {
     "ecmaFeatures": {
       "experimentalObjectRestSpread": true,
-      "jsx": true
+      "jsx": true,
     }
   },
   "plugins": [
     "jest",
     "react",
-    "jsx-a11y"
+    "jsx-a11y",
   ],
   "env": {
     "browser": true,
     "node": true,
-    "jest/globals": true
+    "jest/globals": true,
+  },
+  "settings": {
+    "import/resolver": {
+      "babel-module": {
+        "root": ["./src"],
+      },
+    },
   },
   "rules": {
     "arrow-body-style": 0,
@@ -30,6 +37,6 @@
     "no-shadow": 0,
     "no-use-before-define": ["error", { "functions": false, "classes": true }],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "react/require-extension": "off"
-  }
+    "react/require-extension": "off",
+  },
 }
