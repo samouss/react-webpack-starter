@@ -3,7 +3,6 @@ import Header from 'components/Header';
 import Content from 'components/Content';
 
 class Container extends Component {
-
   constructor(props) {
     super(props);
 
@@ -25,7 +24,6 @@ class Container extends Component {
       </div>
     );
   }
-
 }
 
 export default Container;
