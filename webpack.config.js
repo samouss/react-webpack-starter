@@ -85,9 +85,6 @@ module.exports = (options = {}) => {
       ],
     },
     plugins: clean([
-      new webpack.NamedModulesPlugin(),
-      new webpack.NamedChunksPlugin(),
-
       new webpack.optimize.ModuleConcatenationPlugin(),
 
       new webpack.optimize.CommonsChunkPlugin({
