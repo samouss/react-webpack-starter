@@ -11,12 +11,12 @@
       "useBuiltIns": true,
     }],
     "react",
+    "stage-2",
   ],
   "plugins": [
     ["module-resolver", {
       "root": ["./src"],
     }],
-    "transform-object-rest-spread",
   ],
   "env": {
     "test": {
