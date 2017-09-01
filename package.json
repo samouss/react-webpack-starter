@@ -4,10 +4,10 @@
   "description": "Webpack React Starter with Babel, ESLint, Mocha, Chai, Sinon, Enzyme",
   "scripts": {
     "clean": "rm -rf dist",
-    "start": "npm run clean && node_modules/.bin/webpack-dev-server --inline --no-info",
-    "build": "npm run clean && node_modules/.bin/webpack --env.production",
+    "start": "npm run clean && webpack-dev-server --inline --no-info",
+    "build": "npm run clean && webpack --env.production",
     "test": "jest",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "jest --watch"
   },
   "repository": {
     "type": "git",
