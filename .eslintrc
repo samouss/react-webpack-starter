@@ -18,8 +18,8 @@
   },
   "settings": {
     "import/resolver": {
-      "babel-module": {
-        "root": ["./src"],
+      "webpack": {
+        "config": "webpack.config.js",
       },
     },
   },

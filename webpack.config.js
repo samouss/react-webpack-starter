@@ -1,3 +1,4 @@
+const path = require('path');
 const webpack = require('webpack');
 const HtmlPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -37,6 +38,12 @@ module.exports = (options = {}) => {
     },
     performance: !isProduction ? false : {
       hints: 'warning',
+    },
+    resolve: {
+      modules: [
+        path.resolve(__dirname, 'src'),
+        'node_modules',
+      ],
     },
     module: {
       loaders: [
