@@ -64,7 +64,7 @@ module.exports = (options = {}) => {
             {
               loader: 'eslint-loader',
               options: {
-                configFile: '.eslintrc',
+                configFile: '.eslintrc.js',
                 failOnError: isProduction,
                 failOnWarning: isProduction,
               },
