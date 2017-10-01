@@ -7,6 +7,7 @@ module.exports = {
     '\\.css$': 'identity-obj-proxy',
   },
   setupFiles: [
+    './jest.polyfills.js',
     './jest.setup.js',
   ],
   snapshotSerializers: [
