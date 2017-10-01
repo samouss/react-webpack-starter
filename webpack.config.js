@@ -26,7 +26,7 @@ module.exports = (options = {}) => {
   const isProduction = !!options.production;
 
   return {
-    devtool: !isProduction ? 'eval' : 'source-map',
+    devtool: !isProduction ? 'cheap-module-source-map' : 'source-map',
     entry: [
       `${__dirname}/src/polyfills.js`,
       `${__dirname}/src/index.js`,
