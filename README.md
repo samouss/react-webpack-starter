@@ -22,7 +22,7 @@ rm -rf [PROJECT_NAME]/.git
 Clone the repository and then run the following command:
 
 ```
-npm install
+yarn install
 ```
 
 ## Run the application
@@ -30,7 +30,7 @@ npm install
 For build the dev application and launch a server in watch mode on `localhost:8080`:
 
 ```
-npm start
+yarn start
 ```
 
 ## Bundle the application
@@ -38,7 +38,7 @@ npm start
 For build your application for production:
 
 ```
-npm run build
+yarn build
 ```
 
 ## Run the test for your application
@@ -46,11 +46,11 @@ npm run build
 Your tests will be executed in single run mode:
 
 ```
-npm test
+yarn test
 ```
 
 For run in watch mode:
 
 ```
-npm test:watch
+yarn test:watch
 ```
