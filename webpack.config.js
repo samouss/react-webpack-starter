@@ -91,8 +91,6 @@ module.exports = {
     ],
   },
   plugins: clean([
-    new webpack.optimize.ModuleConcatenationPlugin(),
-
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       filename: JSFilenameIdentifier,
