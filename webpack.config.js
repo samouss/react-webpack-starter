@@ -136,6 +136,7 @@ module.exports = {
         comments: false,
         screw_ie8: true,
       },
+      sourceMap: true,
     }),
   ]),
 };
