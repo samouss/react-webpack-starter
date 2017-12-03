@@ -8,5 +8,3 @@ before_install:
 script:
   - yarn build
   - yarn test
-
-cache: yarn
