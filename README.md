@@ -1,7 +1,7 @@
 
 # React Webpack starter
 
-[![dependencies Status](https://david-dm.org/samouss/react-webpack-starter/status.svg)](https://david-dm.org/samouss/react-webpack-starter) [![devDependencies Status](https://david-dm.org/samouss/react-webpack-starter/dev-status.svg)](https://david-dm.org/samouss/react-webpack-starter?type=dev)
+[![Build Status](https://travis-ci.org/samouss/react-webpack-starter.svg?branch=master)](https://travis-ci.org/samouss/react-webpack-starter) [![dependencies Status](https://david-dm.org/samouss/react-webpack-starter/status.svg)](https://david-dm.org/samouss/react-webpack-starter) [![devDependencies Status](https://david-dm.org/samouss/react-webpack-starter/dev-status.svg)](https://david-dm.org/samouss/react-webpack-starter?type=dev)
 
 React starter build with Webpack 3, Babel, CSS Modules, ESLint, Jest, Enzyme.
 
