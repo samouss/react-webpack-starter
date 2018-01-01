@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -124,19 +125,16 @@ module.exports = {
       },
     }),
 
-    isProduction && new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        screw_ie8: true,
-        warnings: false,
-      },
-      mangle: {
-        screw_ie8: true,
-      },
-      output: {
-        comments: false,
-        screw_ie8: true,
-      },
+    isProduction && new UglifyJsPlugin({
       sourceMap: true,
+      uglifyOptions: {
+        compress: {
+          warnings: false,
+        },
+        output: {
+          comments: false,
+        },
+      },
     }),
   ]),
 };
