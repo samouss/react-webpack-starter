@@ -50,7 +50,7 @@
     "postcss-nested": "3.0.0",
     "react-test-renderer": "16.2.0",
     "style-loader": "0.19.1",
-    "uglifyjs-webpack-plugin": "1.1.5",
+    "uglifyjs-webpack-plugin": "1.1.6",
     "webpack": "3.10.0",
     "webpack-dev-server": "2.9.7"
   },
