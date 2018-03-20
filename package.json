@@ -46,7 +46,7 @@
     "html-webpack-plugin": "3.0.7",
     "identity-obj-proxy": "3.0.0",
     "jest": "22.4.2",
-    "postcss-loader": "2.1.2",
+    "postcss-loader": "2.1.3",
     "postcss-nested": "3.0.0",
     "react-test-renderer": "16.2.0",
     "style-loader": "0.20.3",
