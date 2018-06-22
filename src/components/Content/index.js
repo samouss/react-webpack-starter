@@ -4,7 +4,9 @@ import './index.css';
 
 const Header = ({ message }) => (
   <p styleName="container">
-    Hello from {message} !!
+    Hello from
+    {message}
+    !!
   </p>
 );
 
