@@ -4,8 +4,8 @@ exports[`<Content /> should render the component 1`] = `
 <p
   styleName="container"
 >
-  Hello from 
+  Hello from
   Test app
-   !!
+  !!
 </p>
 `;

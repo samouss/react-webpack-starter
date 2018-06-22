@@ -4,7 +4,7 @@ exports[`<Header /> should render the component 1`] = `
 <h1
   styleName="container"
 >
-  React Starter, 
+  React Starter,
   Test app
 </h1>
 `;
