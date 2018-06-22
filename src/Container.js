@@ -8,15 +8,13 @@ class Container extends Component {
   };
 
   render() {
+    const { message } = this.state;
+
     return (
       <div style={{ width: '980px', margin: '50px auto' }}>
-        <Header
-          title="My React App"
-        />
+        <Header title="My React App" />
 
-        <Content
-          message={this.state.message}
-        />
+        <Content message={message} />
       </div>
     );
   }

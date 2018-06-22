@@ -4,7 +4,8 @@ import './index.css';
 
 const Header = ({ title }) => (
   <h1 styleName="container">
-    React Starter, {title}
+    React Starter,
+    {title}
   </h1>
 );
 
